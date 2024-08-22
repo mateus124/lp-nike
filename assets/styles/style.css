@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --headerh: 3.5rem;
+    --black: #0d0d0d;
+    --black-light: #b3b3b3;
+    --white: #ffffff;
+    --title: #0d0d0d;
+    --text: #8c8c8c;
+    --body: #f5f5f5;
+    --font: "Poppins", sans-serif;
+    --second-font: "Syncopate", sans-serif;
+    --big-fontsize: 2.5rem;
+    --h2-fontsize: 1.25rem;
+    --normal-fontsize: .938rem;
+    --small-fontsize: .813rem;
+    --font-regular: 400;
+    --font-bold: 700;
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+@media screen and (min-width: 1152px) {
+    :root {
+        --big-fontsize: 4.5rem;
+        --h2-fontsize: 1.5rem
+        --normal-fontsize: 1rem;
+        --small-fontsize: .875rem;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: var(--font);
+    font-size: var(--normal-fontsize);
+    background-color: var(--body);
+    color: var(--text);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 1120px;
+    margin-inline: 1.5rem;
+}
+
+/* HEADER */
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--body);
+    z-index: var(--z-fixed);
+    transition: box-shadow .4s;
+}
+
+.nav {
+    height: var(--headerh);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}   
+
+.nav-logo img {
+    width: 3rem;
+}
+
+.nav-toggle,
+.nav-close {
+    display: flex;
+    font-size: 1.25rem;
+    color: var(--title);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1023px) {
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        background-color: var(--body);
+        box-shadow: -1px 0px 16px #0000001a;
+        width: 80%;
+        height: 100%;
+        padding: 6rem 3rem;
+        transition: right .4s;
+    }
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+}
+
+.nav-link {
+    color: var(--title);
+    font-family: var(--second-font);
+}
+
+.nav-close {
+    position: absolute;
+    top: 1.125rem;
+    right: 1.5rem;
+}
+
+.show-menu {
+    right: 0;
+}
+
+/* HOME */
+.home-container {
+    position: relative;
+    display: grid;
+    row-gap: 2rem;
+    padding-block: 8rem 4rem;
+}
+
+.home-subtitle,
+.home-title,
+.home-button {
+    font-family: var(--second-font);
+    color: var(--title);
+}
+
+.home-subtitle {
+    font-size: var(--h2-fontsize);
+    margin-bottom: .5rem;
+}
+
+.home-title {
+    font-size: var(--big-fontsize);
+    margin-bottom: 1rem;
+}
+
+.home-description {
+    font-size: var(--small-fontsize);
+    margin-bottom: 2rem;
+}
+
+.home-button {
+    display: inline-block;
+    background-color: var(--white);
+    box-shadow: 0 8px 32px #0000001a;
+    padding: 1rem 3rem;
+    border-radius: 4rem;
+    font-weight: var(--font-bold);
+    transition: box-shadow .4s;
+}
+
+.home-button:hover {
+    box-shadow: 0 8px 32px #00000026;
+}
+
+.home-social {
+    position: absolute;
+    top: 10rem;
+    right: 0;
+    display: grid;
+    row-gap: 1rem;
+}
+
+.home-social-link {
+    display: inline-flex;
+    font-size: 1.25rem;
+    color: var(--title);
+    transition: transform .4s;
+}
+
+.home-social-link:hover {
+    transform: translateY(-.25rem);
+}
+
+.home-images {
+    display: grid;
+    position: relative;
+}
+
+.home-shoe {
+    width: 300px;
+    margin-inline: auto;
+}
+
+.home-circle {
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(180deg, #ffffff, #f5f5f5);
+    border-radius: 50%;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+}
+
+/* SWIPER */
+.swiper {
+    margin-inline: initial;
+}
+
+.swiper-pagination-bullets.swiper-pagination-horizontal{
+    bottom: -2rem;
+}
+
+.swiper-pagination-bullet {
+    width: 1rem;
+    height: .25rem;
+    border-radius: 1rem;
+    background-color: var(--black-light);
+    opacity: 1;
+    transition: background-color .3s, width .3s;
+}
+
+.swiper-pagination-bullet-active {
+    width: 1.25rem;
+    background-color: black;
+}
+
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 2px;
+}
+
+.shadow-header {
+    box-shadow: 0 1px 16px #0000001a;
+}
+
+/* BREAK POINTS */
+@media screen and (max-width: 320px) {
+    .container {
+        margin-inline: 1rem;
+    }
+    .home-title {
+        font-size: 2rem;
+    }
+    .home-circle {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .nav-menu {
+        width: 60%;
+    }
+    .home-container {
+        grid-template-columns: 350px;
+        justify-content: center;
+    }
+    .home-data {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 1023px) {
+    .nav {
+        height: calc(var(--headerh) + 2rem);
+    }
+    .nav-toggle, .nav-close {
+        display: none;
+    }
+    .nav-menu {
+        width: initial;
+    }
+    .nav-list {
+        flex-direction: row;
+        column-gap: 4rem;
+    }
+    .home-container {
+        height: 100vh;
+        grid-template-columns: repeat(2, 400px);
+        place-items: center;
+        column-gap: 2rem;
+    }
+    .home-data {
+        text-align: initial;
+    }
+    .home-social {
+        align-content: center;
+        top: 0;
+        bottom: 0;
+    }
+}
+
+@media screen and (min-width: 1152px) {
+    .container {
+        margin-inline: auto;
+    }
+    .home-container {
+        grid-template-columns: 430px 600px;
+        column-gap: 4.5rem;
+    }
+    .home-title {
+        margin-bottom: 1.25rem;
+    }
+    .home-description {
+        font-size: var(--normal-fontsize);
+        margin-bottom: 3rem;
+    }
+    .home-shoe {
+        width: 600px;
+    }
+    .home-circle {
+        width: 500px;
+        height: 500px;
+    }
+}
+
+@media screen and (min-width: 1248px) {
+    .home-social {
+        right: -3rem;
+        row-gap: 2rem;
+    }
+    .home-social-link {
+        font-size: 1.5rem;
+    }
+}
